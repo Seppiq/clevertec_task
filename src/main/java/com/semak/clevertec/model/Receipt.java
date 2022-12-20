@@ -26,7 +26,7 @@ public class Receipt {
     private Set<Product> product;
 
     @Column(nullable = false)
-    String description;
+    private String description;
 
     @Column
     private Double total;
@@ -34,13 +34,13 @@ public class Receipt {
     private LocalDateTime date;
 
     @OneToOne
-    DiscountCard discountCard;
+    private DiscountCard discountCard;
 
     @Column
     private Boolean isDiscount;
 
     @Column(nullable = false)
-    Double discount;
+    private Double discount;
 
     @PrePersist
     void prePersist() {

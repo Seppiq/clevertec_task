@@ -1,25 +1,26 @@
 package com.semak.clevertec.dto.receipt;
 
 import com.semak.clevertec.dto.card.CardDto;
+import com.semak.clevertec.model.Product;
 import lombok.Builder;
 import lombok.Data;
 
+import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
+import java.util.Set;
 
 @Data
 @Builder
 public class ReceiptDto {
-    Long id;
+    private Set<Product> product;
 
-    String description;
+    private String description;
 
-    CardDto cardDto;
+    private Double total;
 
-    Double total;
+    private LocalDateTime date;
 
-    Double discount;
+    private Boolean isDiscount;
 
-    ZonedDateTime createDate;
-
-    ZonedDateTime updateDate;
+    private Double discount;
 }

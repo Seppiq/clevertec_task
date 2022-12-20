@@ -36,4 +36,10 @@ public class CardServiceImpl implements CardService {
         DiscountCard discountCard = discountCardRepository.findById(id).orElseThrow(() -> new ProductNotFoundException("the user with this id was not found"));
         return cardDtoConverter.convertToDto(discountCard);
     }
+
+    @Override
+    @Transactional
+    public void save(DiscountCard card) {
+        discountCardRepository.save(card);
+    }
 }

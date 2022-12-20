@@ -24,7 +24,7 @@ public class PdfServiceImpl implements PdfService {
     private static final String HEADER_DATE = "Date: ";
     private static final String HEADER_TIME = "Time: ";
     private static final String FOOTER_TOTAL = "Total: ";
-    private static final String FOOTER_DISCOUNT = "Discount: -";
+    private static final String FOOTER_DISCOUNT = "Discount: ";
     private static final String CURRENCY_SIGN = "$";
     private static final String EMPTY_PARAGRAPH = " ";
 
