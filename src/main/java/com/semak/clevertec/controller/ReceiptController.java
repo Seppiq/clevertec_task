@@ -24,7 +24,6 @@ public class ReceiptController {
 
     private final PdfService pdfService;
 
-
     @GetMapping
     public ResponseEntity<List<Receipt>> getReceipts() {
         return ok(receiptService.getAll());

@@ -22,14 +22,15 @@ public class Receipt {
     private Long id;
 
     @OneToMany(fetch = FetchType.EAGER)
-    @JoinColumn(name = "product_id")
+    //@JoinColumn(name = "receipt")
     private Set<Product> product;
 
-    @Column(nullable = false)
+    @Column()
     private String description;
 
     @Column
     private Double total;
+
     @Column
     private LocalDateTime date;
 
@@ -45,23 +46,31 @@ public class Receipt {
     @PrePersist
     void prePersist() {
         calculateTotal();
+        calcDiscount();
     }
 
     @PreUpdate
     void preUpdate() {
         calculateTotal();
+        calcDiscount();
     }
 
     private void calculateTotal() {
         if (isDiscount) {
             for (Product product1 : product) {
                 total += product1.getTotal() * discountCard.getDiscountPercent();
+                discount += product1.getTotal() - total;
             }
         } else {
             for (Product product1 : product) {
                 total += product1.getTotal();
+                discount += product1.getTotal() - total;
             }
         }
+    }
+
+    private void calcDiscount() {
+
     }
 
     @Override

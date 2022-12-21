@@ -1,12 +1,14 @@
 package com.semak.clevertec.dto.product;
 
+import com.semak.clevertec.model.Receipt;
+
 public class ProductDtoBuilderImpl implements ProductDtoBuilder {
 
     ProductDto productDto = new ProductDto();
 
     @Override
-    public ProductDtoBuilder setProduct(String product) {
-        productDto.setProduct(product);
+    public ProductDtoBuilder setProduct(String name) {
+        productDto.setName(name);
         return this;
     }
 
@@ -25,6 +27,12 @@ public class ProductDtoBuilderImpl implements ProductDtoBuilder {
     @Override
     public ProductDtoBuilder setTotalPrice(Double totalPrice) {
         productDto.setTotalPrice(totalPrice);
+        return this;
+    }
+
+    @Override
+    public ProductDtoBuilder setReceipt(Receipt receipt) {
+        productDto.setReceipt(receipt.getId());
         return this;
     }
 

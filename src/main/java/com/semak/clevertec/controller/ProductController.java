@@ -25,7 +25,7 @@ public class ProductController {
     }
 
     @PostMapping()
-    public ResponseEntity<Void> save(@Validated @RequestBody Product product) {
+    public ResponseEntity<Void> save(@Validated @RequestBody ProductDto product) {
         receiptService.save(product);
         return ok().build();
     }

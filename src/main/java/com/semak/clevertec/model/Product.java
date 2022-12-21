@@ -5,6 +5,7 @@ import lombok.*;
 import org.hibernate.Hibernate;
 
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name = "product")
@@ -31,6 +32,10 @@ public class Product {
 
     @Column
     private Double total;
+
+    @ManyToOne (fetch = FetchType.EAGER)
+    @JoinColumn(name = "receipt")
+    private Receipt receipt;
 
     @PrePersist
     void prePersist() {

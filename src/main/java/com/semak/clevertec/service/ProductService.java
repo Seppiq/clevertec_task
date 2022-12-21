@@ -11,12 +11,7 @@ public interface ProductService {
 
     ProductDto getById(Long id);
 
-    void save(Product product);
-
-    //ProductDto update(Long id);
+    void save(ProductDto productDto);
 
     void delete(Long id);
-
-    List<Product> getAllById(Long[] ids);
-
 }

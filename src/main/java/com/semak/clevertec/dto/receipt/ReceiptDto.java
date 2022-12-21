@@ -1,12 +1,11 @@
 package com.semak.clevertec.dto.receipt;
 
-import com.semak.clevertec.dto.card.CardDto;
+import com.semak.clevertec.model.DiscountCard;
 import com.semak.clevertec.model.Product;
 import lombok.Builder;
 import lombok.Data;
 
 import java.time.LocalDateTime;
-import java.time.ZonedDateTime;
 import java.util.Set;
 
 @Data
@@ -23,4 +22,6 @@ public class ReceiptDto {
     private Boolean isDiscount;
 
     private Double discount;
+
+    private DiscountCard discountCard;
 }

@@ -14,6 +14,7 @@ public class ReceiptServiceImpl implements ReceiptService {
 
     private final ReceiptRepository receiptRepository;
 
+
     @Override
     public List<Receipt> getAll() {
         return (List<Receipt>) receiptRepository.findAll();

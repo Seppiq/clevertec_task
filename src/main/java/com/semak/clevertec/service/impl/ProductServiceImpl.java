@@ -21,7 +21,6 @@ public class ProductServiceImpl implements ProductService {
     private final ProductRepository productRepository;
     private final ProductDtoConverter productDtoConverter;
 
-
     @Override
     @Transactional(readOnly = true)
     public List<ProductDto> getAll() {
@@ -42,19 +41,14 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     @Transactional
-    public void save(Product product) {
-        productRepository.save(product);
+    public void save(ProductDto productDto) {
+        Product card = productDtoConverter.convertFromDto(productDto);
+        productRepository.save(card);
     }
 
     @Override
     public void delete(Long id) {
         Product product = productRepository.findById(id).orElseThrow(() -> new ProductNotFoundException("Product not found"));
         productRepository.delete(product);
-    }
-
-    @Override
-    public List<Product> getAllById(Long[] ids) {
-        List<Product> products = (List<Product>) productRepository.findAllById(List.of(ids));
-        return products;
     }
 }

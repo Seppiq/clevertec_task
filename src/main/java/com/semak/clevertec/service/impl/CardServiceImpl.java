@@ -38,8 +38,8 @@ public class CardServiceImpl implements CardService {
     }
 
     @Override
-    @Transactional
-    public void save(DiscountCard card) {
+    public void save(CardDto cardDto) {
+        DiscountCard card = cardDtoConverter.convertFromDto(cardDto);
         discountCardRepository.save(card);
     }
 }

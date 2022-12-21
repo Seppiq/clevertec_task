@@ -1,9 +1,6 @@
 package com.semak.clevertec.controller;
 
 import com.semak.clevertec.dto.card.CardDto;
-import com.semak.clevertec.dto.product.ProductDto;
-import com.semak.clevertec.model.DiscountCard;
-import com.semak.clevertec.model.Product;
 import com.semak.clevertec.service.CardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -27,7 +24,7 @@ public class CardController {
     }
 
     @PostMapping()
-    public ResponseEntity<Void> save(@Validated @RequestBody DiscountCard discountCard) {
+    public ResponseEntity<Void> save(@Validated @RequestBody CardDto discountCard) {
         cardService.save(discountCard);
         return ok().build();
     }
