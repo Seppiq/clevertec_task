@@ -22,3 +22,6 @@ Test task for CLEVERTEC
 
 POST запрос на добавление товара в чек
 ![image](https://user-images.githubusercontent.com/53149697/208913356-dd9b717d-af09-4cd7-8d35-40fa04d00d4c.png)
+
+GET запрос на просмотр товаров
+![image](https://user-images.githubusercontent.com/53149697/208947709-24c5018f-8120-48b6-9a11-4c3b1140fa17.png)
