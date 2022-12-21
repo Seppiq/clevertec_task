@@ -18,3 +18,7 @@ Test task for CLEVERTEC
 
 # Пример чека
 (https://github.com/Seppiq/clevertec_task/files/10273251/response.pdf)
+
+
+POST запрос на добавление товара в чек
+![image](https://user-images.githubusercontent.com/53149697/208913356-dd9b717d-af09-4cd7-8d35-40fa04d00d4c.png)
